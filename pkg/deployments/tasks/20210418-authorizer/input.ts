@@ -27,4 +27,7 @@ export default {
   goerli: {
     admin: '0xE0a171587b1Cae546E069A943EDa96916F5EE977',
   },
+  defiverse: {
+    admin: '0xf9209B6F49BB9fD73422BA834f4cD444aE7ceacE',
+  },
 };

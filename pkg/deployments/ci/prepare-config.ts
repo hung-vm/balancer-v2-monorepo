@@ -28,6 +28,10 @@ if (process.env.CI) {
       "goerli": {
         "url": "${process.env.GOERLI_RPC_ENDPOINT}"
       }
+      "defiverse": {
+        "gasPrice": 0,
+        "url": "${process.env.DEFIVERSE_RPC_ENDPOINT}"
+      }
     },
     "defaultConfig": {
       "gasPrice": "auto",
