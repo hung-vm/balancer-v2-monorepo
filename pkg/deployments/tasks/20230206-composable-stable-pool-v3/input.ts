@@ -1,4 +1,5 @@
 import Task, { TaskMode } from '../../src/task';
+import { MONTH } from '@balancer-labs/v2-helpers/src/time';
 
 export type ComposableStablePoolDeployment = {
   Vault: string;
@@ -7,6 +8,8 @@ export type ComposableStablePoolDeployment = {
   PoolVersion: string;
   WETH: string;
   BAL: string;
+  pauseWindowDuration: number;
+  bufferPeriodDuration: number;
 };
 
 const Vault = new Task('20210418-vault', TaskMode.READ_ONLY);
@@ -23,4 +26,6 @@ export default {
   BAL,
   FactoryVersion: JSON.stringify({ name: 'ComposableStablePoolFactory', ...BaseVersion }),
   PoolVersion: JSON.stringify({ name: 'ComposableStablePool', ...BaseVersion }),
+  pauseWindowDuration: 3 * MONTH,
+  bufferPeriodDuration: MONTH,
 };

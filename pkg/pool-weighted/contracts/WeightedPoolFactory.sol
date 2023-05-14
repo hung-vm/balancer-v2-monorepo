@@ -22,9 +22,14 @@ import "@balancer-labs/v2-pool-utils/contracts/factories/BasePoolFactory.sol";
 import "./WeightedPool.sol";
 
 contract WeightedPoolFactory is BasePoolFactory {
+    string private _factoryVersion;
+    string private _poolVersion;
+
     constructor(
         IVault vault,
         IProtocolFeePercentagesProvider protocolFeeProvider,
+        string memory factoryVersion,
+        string memory poolVersion,
         uint256 initialPauseWindowDuration,
         uint256 bufferPeriodDuration
     )
@@ -37,6 +42,16 @@ contract WeightedPoolFactory is BasePoolFactory {
         )
     {
         // solhint-disable-previous-line no-empty-blocks
+        _factoryVersion = factoryVersion;
+        _poolVersion = poolVersion;
+    }
+
+    function version() external view returns (string memory) {
+        return _factoryVersion;
+    }
+
+    function getPoolVersion() public view returns (string memory) {
+        return _poolVersion;
     }
 
     /**

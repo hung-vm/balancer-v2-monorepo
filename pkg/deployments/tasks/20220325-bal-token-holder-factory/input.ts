@@ -19,4 +19,7 @@ export default {
   goerli: {
     BAL: TestBALTask.output({ network: 'goerli' }).TestBalancerToken,
   },
+  defiverse: {
+    BAL: '0x738cB40a7CFcD770B9972F3e992811c08613f38D',
+  },
 };

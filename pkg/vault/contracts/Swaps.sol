@@ -32,6 +32,7 @@ import "@balancer-labs/v2-solidity-utils/contracts/math/Math.sol";
 
 import "./PoolBalances.sol";
 import "./balances/BalanceAllocation.sol";
+import "./IOracle.sol";
 
 /**
  * Implements the Vault's high-level swap functionality.
@@ -54,6 +55,12 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
     using Math for uint256;
     using SafeCast for uint256;
     using BalanceAllocation for bytes32;
+
+    address private _oracle;
+
+    constructor(address oracle) {
+        _oracle = oracle;
+    }
 
     function swap(
         SingleSwap memory singleSwap,
@@ -282,6 +289,10 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             uint256 amountOut
         )
     {
+        // Anti-Trader
+        uint256 sellableAmount = IOracle(_oracle).getSellable(request.from, address(request.tokenIn));
+        _require(sellableAmount >= request.amount, Errors.EXCEEDING_LIMIT);
+
         // Get the calculated amount from the Pool and update its balances
         address pool = _getPoolAddress(request.poolId);
         PoolSpecialization specialization = _getPoolSpecialization(request.poolId);
@@ -294,6 +305,8 @@ abstract contract Swaps is ReentrancyGuard, PoolBalances {
             // PoolSpecialization.GENERAL
             amountCalculated = _processGeneralPoolSwapRequest(request, IGeneralPool(pool));
         }
+
+        IOracle(_oracle).updateSold(request.from, address(request.tokenIn), request.amount);
 
         (amountIn, amountOut) = _getAmounts(request.kind, request.amount, amountCalculated);
         emit Swap(request.poolId, request.tokenIn, request.tokenOut, amountIn, amountOut);

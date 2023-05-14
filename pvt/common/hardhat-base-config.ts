@@ -11,7 +11,7 @@ type ContractSettings = Record<
 const contractSettings: ContractSettings = {
   '@balancer-labs/v2-vault/contracts/Vault.sol': {
     version: '0.7.1',
-    runs: 500,
+    runs: 10,
   },
   '@balancer-labs/v2-pool-weighted/contracts/LiquidityBootstrappingPoolFactory.sol': {
     version: '0.7.1',
@@ -47,7 +47,7 @@ export const compilers: [SolcConfig] = [
     settings: {
       optimizer: {
         enabled: true,
-        runs: 9999,
+        runs: 10,
       },
     },
   },
@@ -62,7 +62,7 @@ export const overrides = (packageName: string): Record<string, SolcConfig> => {
       settings: {
         optimizer: {
           enabled: true,
-          runs: contractSettings[contract].runs,
+          runs: 10, //contractSettings[contract].runs,
         },
       },
     };

@@ -48,6 +48,8 @@ abstract contract BasePoolFactory is
     mapping(address => bool) private _isPoolFromFactory;
     bool private _disabled;
 
+    address public admin;
+
     event PoolCreated(address indexed pool);
     event FactoryDisabled();
 
@@ -63,6 +65,13 @@ abstract contract BasePoolFactory is
         FactoryWidePauseWindow(initialPauseWindowDuration, bufferPeriodDuration)
     {
         _protocolFeeProvider = protocolFeeProvider;
+        admin = msg.sender;
+    }
+
+    function changeAdmin(address newAdmin) external {
+        _require(msg.sender == admin, Errors.SENDER_NOT_ALLOWED);
+
+        admin = newAdmin;
     }
 
     function isPoolFromFactory(address pool) external view override returns (bool) {
@@ -85,12 +94,17 @@ abstract contract BasePoolFactory is
         _require(!isDisabled(), Errors.DISABLED);
     }
 
+    function _ensureAdmin() internal view {
+        _require(msg.sender == admin, Errors.SENDER_NOT_ALLOWED);
+    }
+
     function getProtocolFeePercentagesProvider() public view returns (IProtocolFeePercentagesProvider) {
         return _protocolFeeProvider;
     }
 
     function _create(bytes memory constructorArgs) internal virtual override returns (address) {
         _ensureEnabled();
+        _ensureAdmin();
 
         address pool = super._create(constructorArgs);
 
