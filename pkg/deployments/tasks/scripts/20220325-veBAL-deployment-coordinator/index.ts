@@ -15,5 +15,6 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
     input.activationScheduledTime,
     input.thirdStageDelay,
   ];
-  await task.deployAndVerify('veBALDeploymentCoordinator', args, from, force);
+  let contract = await task.deployAndVerify('veBALDeploymentCoordinator', args, from, force);
+  await contract.performFirstStage();
 };

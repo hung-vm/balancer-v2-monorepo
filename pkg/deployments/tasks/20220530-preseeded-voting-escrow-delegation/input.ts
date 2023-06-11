@@ -80,4 +80,8 @@ export default {
     PreseededBoostCalls: [],
     PreseededApprovalCalls: [],
   },
+  defiverse: {
+    PreseededBoostCalls: [],
+    PreseededApprovalCalls: [],
+  },
 };

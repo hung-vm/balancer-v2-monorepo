@@ -18,4 +18,7 @@ export default {
   kovan: {
     startTime: 1654732800000, //  Thursday, June 9, 2022 00:00:00 UTC
   },
+  defiverse: {
+    startTime: 1686246893, //  Thursday, June 9, 2022 00:00:00 UTC
+  },
 };
