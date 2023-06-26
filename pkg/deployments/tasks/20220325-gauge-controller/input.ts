@@ -22,6 +22,6 @@ export default {
     BPT: '0xf8a0623ab66F985EfFc1C69D05F1af4BaDB01b00', // BPT of an 80-20 BAL-WETH Pool using test BAL
   },
   defiverse: {
-    BPT:'0xeded8858e4756b147a9115c593bc0146847d3af2'
+    BPT:'0x8Ea93dFbe0c02aaFdc8a9E6Bfdd7EfaCdaC8CcA6'
   }
 };

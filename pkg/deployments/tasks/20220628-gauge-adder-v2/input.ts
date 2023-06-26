@@ -16,4 +16,7 @@ export default {
   goerli: {
     PreviousGaugeAdder: GaugeAdder.output({ network: 'goerli' }).GaugeAdder,
   },
+  defiverse: {
+    PreviousGaugeAdder: GaugeAdder.output({ network: 'defiverse' }).GaugeAdder,
+  },
 };

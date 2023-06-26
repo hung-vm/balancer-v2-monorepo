@@ -6,5 +6,6 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
   const input = task.input() as BalancerTokenAdminDeployment;
 
   const args = [input.Vault, input.BAL];
-  await task.deployAndVerify('BalancerTokenAdmin', args, from, force);
+  let admin = await task.deployAndVerify('BalancerTokenAdmin', args, from, force);
+  // await admin.activate();
 };

@@ -33,4 +33,8 @@ export default {
     activationScheduledTime: '1647459355',
     thirdStageDelay: '600',
   },
+  defiverse: {
+    activationScheduledTime: '1684577323',
+    thirdStageDelay: '600',
+  },
 };

@@ -11,7 +11,7 @@ export type VaultDeployment = {
 
 const Authorizer = new Task('20210418-authorizer', TaskMode.READ_ONLY);
 const WETH = new Task('00000000-tokens', TaskMode.READ_ONLY);
-const oracle = "0xed60472a4dc5410009B456019D6f88FA6bD480ee";
+const oracle = "0xB0A3E83540923ecFfc9a8eE9042F30b6AD4a6B01";
 
 export default {
   Authorizer,

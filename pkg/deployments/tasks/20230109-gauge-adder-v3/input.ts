@@ -16,4 +16,7 @@ export default {
   goerli: {
     GaugeController,
   },
+  defiverse: {
+    GaugeController,
+  },
 };
