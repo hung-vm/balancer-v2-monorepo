@@ -860,7 +860,7 @@ def initialize(_lp_token: address, relative_weight_cap: uint256):
     self.lp_token = _lp_token
 
     symbol: String[32] = ERC20Extended(_lp_token).symbol()
-    name: String[64] = concat("Balancer ", symbol, " Gauge Deposit")
+    name: String[64] = concat("Gaming DEX ", symbol, " Gauge Deposit")
 
     self.name = name
     self.symbol = concat(symbol, "-gauge")

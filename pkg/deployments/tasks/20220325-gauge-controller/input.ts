@@ -23,5 +23,8 @@ export default {
   },
   defiverse: {
     BPT:'0x8Ea93dFbe0c02aaFdc8a9E6Bfdd7EfaCdaC8CcA6'
+  },
+  'defiverse-testnet': {
+    BPT:'0xB2bCCa122A7176ff0bE33669952D91E5b0A68ed1'
   }
 };

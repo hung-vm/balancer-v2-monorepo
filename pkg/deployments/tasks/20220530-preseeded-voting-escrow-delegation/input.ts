@@ -84,4 +84,8 @@ export default {
     PreseededBoostCalls: [],
     PreseededApprovalCalls: [],
   },
+  'defiverse-testnet': {
+    PreseededBoostCalls: [],
+    PreseededApprovalCalls: [],
+  },
 };

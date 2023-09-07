@@ -19,4 +19,7 @@ export default {
   defiverse: {
     GaugeController,
   },
+  'defiverse-testnet': {
+    GaugeController,
+  },
 };

@@ -607,7 +607,7 @@ def initialize(_lp_token: address, _reward_contract: address, _claim_sig: bytes3
     self.lp_token = _lp_token
 
     symbol: String[32] = ERC20Extended(_lp_token).symbol()
-    name: String[64] = concat("Balancer ", symbol, " RewardGauge Deposit")
+    name: String[64] = concat("Gaming DEX ", symbol, " RewardGauge Deposit")
 
     self.name = name
     self.symbol = concat(symbol, "-gauge")

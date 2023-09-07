@@ -709,7 +709,7 @@ def initialize(_lp_token: address):
     self.voting_escrow = Factory(msg.sender).voting_escrow()
 
     symbol: String[26] = ERC20Extended(_lp_token).symbol()
-    name: String[64] = concat("Balancer ", symbol, " Gauge Deposit")
+    name: String[64] = concat("Gaming DEX ", symbol, " Gauge Deposit")
 
     self.name = name
     self.symbol = concat(symbol, "-gauge")

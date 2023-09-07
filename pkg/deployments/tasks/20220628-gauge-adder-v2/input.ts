@@ -19,4 +19,7 @@ export default {
   defiverse: {
     PreviousGaugeAdder: GaugeAdder.output({ network: 'defiverse' }).GaugeAdder,
   },
+  'defiverse-testnet': {
+    PreviousGaugeAdder: GaugeAdder.output({ network: 'defiverse-testnet' }).GaugeAdder,
+  },
 };

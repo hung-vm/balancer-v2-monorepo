@@ -22,4 +22,7 @@ export default {
   defiverse: {
     BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
   },
+  'defiverse-testnet': {
+    BAL: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
+  },
 };

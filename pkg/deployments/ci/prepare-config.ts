@@ -27,10 +27,14 @@ if (process.env.CI) {
       },
       "goerli": {
         "url": "${process.env.GOERLI_RPC_ENDPOINT}"
-      }
+      },
       "defiverse": {
         "gasPrice": 0,
         "url": "${process.env.DEFIVERSE_RPC_ENDPOINT}"
+      },
+      "defiverse-testnet": {
+        "gasPrice": 0,
+        "url": "${process.env.DEFIVERSE_TESTNET_RPC_ENDPOINT}"
       }
     },
     "defaultConfig": {
@@ -42,3 +46,4 @@ if (process.env.CI) {
   mkdirSync(path.dirname(HH_CONFIG_FILENAME), { recursive: true });
   writeFileSync(HH_CONFIG_FILENAME, content);
 }
+

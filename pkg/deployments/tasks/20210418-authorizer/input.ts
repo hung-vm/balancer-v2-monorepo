@@ -30,4 +30,7 @@ export default {
   defiverse: {
     admin: '0x68C297EDdd953961E81532202e48b048e459c7c3',
   },
+  'defiverse-testnet': {
+    admin: '0x68C297EDdd953961E81532202e48b048e459c7c3',
+  },
 };

@@ -11,7 +11,8 @@ export type VaultDeployment = {
 
 const Authorizer = new Task('20210418-authorizer', TaskMode.READ_ONLY);
 const WETH = new Task('00000000-tokens', TaskMode.READ_ONLY);
-const oracle = "0xB0A3E83540923ecFfc9a8eE9042F30b6AD4a6B01";
+// const oracle = "0xB0A3E83540923ecFfc9a8eE9042F30b6AD4a6B01"; // defiverse mainnet
+const oracle = "0x7Ef735FEC3ff127ebff417BEA8Cf47a69f73F60A"; // defiverse testnet
 
 export default {
   Authorizer,

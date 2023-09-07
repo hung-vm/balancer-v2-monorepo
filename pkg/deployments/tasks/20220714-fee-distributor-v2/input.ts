@@ -18,4 +18,7 @@ export default {
   defiverse: {
     startTime: 1686246893, // Thursday, July 14 2022 00:00:00 UTC
   },
+  'defiverse-testnet': {
+    startTime: 1692873348, // Thursday, July 14 2022 00:00:00 UTC
+  },
 };
